@@ -7,8 +7,6 @@ name: Shoes store app
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -39,5 +37,5 @@ jobs:
       - name: Installing surge  
         run: npm install -g surge
     
-      - name: Run surge
+      - name: Run on surge
         run: surge ./build http://shoes-store-app-by-naveeda.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
